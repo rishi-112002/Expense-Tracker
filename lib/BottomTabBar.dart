@@ -1,4 +1,5 @@
 import 'package:expensestracke/HomeScreen.dart';
+import 'package:expensestracke/SearchScreen.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarExample extends StatefulWidget {
@@ -16,10 +17,7 @@ class _BottomNavigationBarExampleState
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static final List<Widget> _widgetOptions = <Widget>[
     HomeScreen(),
-    const Text(
-      'Index 1: Search',
-      style: optionStyle,
-    ),
+    const SearchScreen(),
     const Text(
       'Index 2: category',
       style: optionStyle,

@@ -1,3 +1,4 @@
+import 'package:expensestracke/AddCourse.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -74,9 +75,8 @@ class HomeScreen extends StatelessWidget {
               IconButton(
                 icon: const Icon(Icons.add),
                 onPressed: () {
-                  // Add your logic for the "Add" button here
-                  // This function will be called when the "Add" button is pressed
-                },
+                  _navigationToAddCourseSelection()
+                }
               ),
             ],
           ),
@@ -97,5 +97,11 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+  
+  Future <void> _navigationToAddCourseSelection(BuildContext context) async {
+    final result = await Navigator.push(context, 
+    MaterialPageRoute(builder: (context)=>  AddCourse()));
+    print("data from add Screen $result");
   }
 }
