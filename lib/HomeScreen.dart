@@ -3,6 +3,11 @@ import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
+
+  final bool _pinned = false;
+  final bool _snap = true;
+  final bool _floating = true;
+
   final List<String> courseTitles = [
     'Introduction to Programming',
     'Web Development Fundamentals',
@@ -27,9 +32,11 @@ class HomeScreen extends StatelessWidget {
     'images/lake.jpg',
     'images/Dash.png',
   ];
-  final bool _pinned = false;
-  final bool _snap = true;
-  final bool _floating = true;
+  Future<void> _navigationToAddCourseSelection(BuildContext context) async {
+    final result = await Navigator.push(
+        context, MaterialPageRoute(builder: (context) => AddCourse()));
+    print("data from add Screen $result");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +62,7 @@ class HomeScreen extends StatelessWidget {
         keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: const Color.fromARGB(66, 255, 255, 255),
+            backgroundColor: const Color.fromARGB(255, 255, 255, 255),
             pinned: _pinned,
             surfaceTintColor: Colors.white10,
             snap: _snap,
@@ -73,11 +80,10 @@ class HomeScreen extends StatelessWidget {
             ),
             actions: [
               IconButton(
-                icon: const Icon(Icons.add),
-                onPressed: () {
-                  _navigationToAddCourseSelection()
-                }
-              ),
+                  icon: const Icon(Icons.add),
+                  onPressed: () {
+                    _navigationToAddCourseSelection(context);
+                  }),
             ],
           ),
           SliverList(
@@ -97,11 +103,5 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
     );
-  }
-  
-  Future <void> _navigationToAddCourseSelection(BuildContext context) async {
-    final result = await Navigator.push(context, 
-    MaterialPageRoute(builder: (context)=>  AddCourse()));
-    print("data from add Screen $result");
   }
 }
