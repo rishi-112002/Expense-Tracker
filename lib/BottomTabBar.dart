@@ -60,7 +60,7 @@ class _BottomNavigationBarExampleState
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: const Color.fromARGB(255, 204, 235, 250),
+        selectedItemColor: const Color.fromARGB(199, 131, 208, 238),
         unselectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),

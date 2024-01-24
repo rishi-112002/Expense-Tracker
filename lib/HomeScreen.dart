@@ -89,13 +89,14 @@ class HomeScreen extends StatelessWidget {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return ListTile(
+                return Center(
+                    child: ListTile(
                   leading: CircleAvatar(
                     foregroundImage: AssetImage(image[index]),
                   ),
                   title: Text(courseTitles[index]),
                   subtitle: Text(courseTitles[index]),
-                );
+                ));
               },
               childCount: courseTitles.length,
             ),

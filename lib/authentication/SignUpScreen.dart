@@ -12,7 +12,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(113, 192, 245, 0.776),
+      backgroundColor: const Color.fromARGB(199, 131, 208, 238),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -77,7 +77,7 @@ class SignUpScreen extends StatelessWidget {
                   print("onPress");
                 },
                 child: const Text(
-                  "Login",
+                  "Sign Up",
                   style: TextStyle(color: Colors.white),
                 )),
             Padding(

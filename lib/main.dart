@@ -1,5 +1,3 @@
-import 'package:expensestracke/BottomTabBar.dart';
-import 'package:expensestracke/authentication/LoginScreen.dart';
 import 'package:expensestracke/authentication/afterSplash.dart';
 import 'package:flutter/material.dart';
 
